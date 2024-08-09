@@ -30,10 +30,28 @@ async function startServer(config, db) {
             }
         });
 
+        //
+        // Validates a user id (just a number in this simple example).
+        //
+        function validateUserId(value, res) {
+            if (typeof value !== "number" || value <= 0) {
+                res.sendStatus(400);
+                return false;                
+            }
+            return true;
+        }
+
+        function validateString(value, res) {
+            if (typeof value !== "string" || value.length === 0) {
+                res.sendStatus(400);
+                return false;
+            }
+            return true;
+        }
+
         app.post("/posts", async (req, res) => {
             const { userId, title, body } = req.body;
-            if (!userId || !title || !body) { // Some very simple validation.
-                res.sendStatus(400);
+            if (!validateUserId(userId, res) || !validateString(title, res) || !validateString(body, res)) {  // Some very simple validation.
                 return;
             }
 
