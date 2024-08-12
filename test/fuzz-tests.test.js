@@ -7,7 +7,7 @@ const { main } = require("../index");
 const { expectMatchesSchema, isObject } = require("./lib/schema");
 const { generateData } = require("fuzzmatic");
 
-describe("Contract tests", () => {
+describe("Fuzz tests from JSON Schema", () => {
 
     //
     // Note: the test spec must be loaded syncronously because jest does not support async test generation.

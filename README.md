@@ -16,7 +16,7 @@ Built on:
 
 See the test spec here: [./test/test-spec.yaml](./test/test-spec.yaml).
 
-See the contract testing code here: [./test/fuzz-tests.test.js](./test/fuzz-tests.test.js).
+See the fuzz testing here: [./test/fuzz-tests.test.js](./test/fuzz-tests.test.js).
 
 ## Setup
 
